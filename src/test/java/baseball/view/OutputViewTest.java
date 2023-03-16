@@ -1,12 +1,10 @@
 package baseball.view;
 
 
-import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -19,6 +17,7 @@ import org.junit.jupiter.api.Test;
 class OutputViewTest {
 
     private final ByteArrayOutputStream PRINT = new ByteArrayOutputStream();
+    private final OutputView outputView = OutputView.INSTANCE;
 
     @BeforeEach
     void setUp() {
@@ -35,7 +34,7 @@ class OutputViewTest {
     @Test
     public void 게임_시작_문구를_화면에_출력하라() throws Exception{
         //given
-        OutputView.StartBaseballGame();
+        outputView.StartBaseballGame();
         final String EXPECT = "숫자 야구 게임을 시작합니다.\n";
         String actual = PRINT.toString();
 
