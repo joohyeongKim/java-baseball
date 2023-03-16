@@ -3,9 +3,13 @@ package baseball.controller;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
-import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator.ReplaceUnderscores;
 import org.junit.jupiter.api.Test;
 
+@DisplayName("BaseBallGame 클래스")
+@DisplayNameGeneration(ReplaceUnderscores.class)
 class BaseBallGameTest {
 
     @Test
@@ -16,8 +20,9 @@ class BaseBallGameTest {
 
         //when
         baseBallGame.generate();
-        List<Integer> actual = baseBallGame.getInstance();
-        long count = actual.stream()
+        List<Integer> computer = baseBallGame.getInstance();
+        int actual = computer.size();
+        long count = computer.stream()
                 .distinct()
                 .count();
 
