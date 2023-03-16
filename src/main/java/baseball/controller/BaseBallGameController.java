@@ -1,35 +1,28 @@
 package baseball.controller;
 
+import baseball.view.InputView;
 import baseball.view.OutputView;
 
 public class BaseBallGameController {
 
-    private static final OutputView outputView = OutputView.INSTANCE;
+    private final InputView INPUT_VIEW;
+    private final OutputView OUTPUT_VIEW;
+    private BaseBallGameStatus gameStatus;
 
-    private static BaseBallGameStatus gameStatus;
+    public BaseBallGameController(InputView INPUT_VIEW, OutputView OUTPUT_VIEW) {
+        this.INPUT_VIEW = INPUT_VIEW;
+        this.OUTPUT_VIEW = OUTPUT_VIEW;
+        this.gameStatus = BaseBallGameStatus.PLAY;
+    }
 
-    public static void run() {
-        initializeGame();
-        while (gameStatus.isPlay()) {
-            changeGameStatusToStop();
+
+    // 게임 실행
+    public void run() {
+        OUTPUT_VIEW.StartBaseballGame();
+
+        while (gameStatus.isGameContinues()) {
+            INPUT_VIEW.inputBaseBallNumber();
+            gameStatus = INPUT_VIEW.inputGameStatus();
         }
-
-    }
-
-    // 게임을 초기화하라
-    private static void initializeGame() {
-        outputView.StartBaseballGame();
-        changeGameStatusToPlay();
-    }
-
-    // 게임 상태를 진행으로 변경하라
-    private static void changeGameStatusToPlay() {
-        gameStatus = BaseBallGameStatus.PLAY;
-
-    }
-
-    // 게임 상태를 종료로 변경하라
-    private static void changeGameStatusToStop() {
-        gameStatus = BaseBallGameStatus.STOP;
     }
 }
