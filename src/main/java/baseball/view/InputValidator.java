@@ -6,6 +6,9 @@ public class InputValidator {
     private static final char START_RANGE = '1';
     private static final char END_RANGE = '9';
 
+    private static final String VALID_GAME_STATUS_PLAY = "1";
+    private static final String VALID_GAME_STATUS_STOP = "2";
+
     private InputValidator() {
     }
 
@@ -26,6 +29,12 @@ public class InputValidator {
 
     private static boolean isValidNumberRange(int number) {
         return number >= START_RANGE && number <= END_RANGE;
+    }
+
+    public static void validateGameStatus(String gameStatus) {
+        if (!gameStatus.equals(VALID_GAME_STATUS_PLAY) && !gameStatus.equals(VALID_GAME_STATUS_STOP)) {
+            throw new IllegalArgumentException();
+        }
     }
 
 }

@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 class InputValidatorTest {
 
     @Nested
-    class _1과_9_사이_중복되지_않는_3자리_수_입력 {
+    class 만약_1과_9_사이_중복되지_않는_3자리_수_입력받으면 {
         private final String GIVEN_VALID_INPUT_1 = "123";
         private final String GIVEN_VALID_INPUT_2 = "456";
         private final String GIVEN_VALID_INPUT_3 = "789";
@@ -26,18 +26,18 @@ class InputValidatorTest {
     }
 
     @Nested
-    class _범위를_벗어난_자리수_입력 {
+    class 만약_범위를_벗어난_자리수_입력받으면 {
         private final String GIVEN_TWO_DIGITS = "12";
         private final String GIVEN_FOUR_DIGITS = "1234";
 
         @Test
-        void _2자리_예외_처리() {
+        void 두_자리수_예외_처리() {
             assertThatThrownBy(() -> InputValidator.validateBaseballNumber(GIVEN_TWO_DIGITS))
                     .isInstanceOf(IllegalArgumentException.class);
         }
 
         @Test
-        void _4자리_예외_처리() {
+        void 네_자리수_예외_처리() {
             assertThatThrownBy(() -> InputValidator.validateBaseballNumber(GIVEN_FOUR_DIGITS))
                     .isInstanceOf(IllegalArgumentException.class);
         }
@@ -53,6 +53,17 @@ class InputValidatorTest {
                     .isInstanceOf(IllegalArgumentException.class);
         }
 
+    }
+
+    @Nested
+    class 만약_1이나_2가_아닌_다른_값을_입력받는_경우 {
+        private final String GIVEN = "3";
+
+        @Test
+        public void 에외_처리(){
+            assertThatThrownBy(() -> InputValidator.validateGameStatus(GIVEN))
+                    .isInstanceOf(IllegalArgumentException.class);
+        }
     }
 
 }
