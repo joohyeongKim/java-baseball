@@ -9,4 +9,12 @@ public enum BaseBallGameStatus {
     BaseBallGameStatus(Integer statusCode) {
         this.statusCode = statusCode;
     }
+
+    public boolean isPlay() {
+        return this == PLAY;
+    }
+
+    public boolean isStop() {
+        return this == STOP;
+    }
 }
