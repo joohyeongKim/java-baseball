@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator.ReplaceUnderscores;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("OutputView 클래스")
@@ -30,16 +31,26 @@ class OutputViewTest {
         PRINT.reset();
     }
 
+    @Nested
+    class startBaseballGame_메서드는 {
 
-    @Test
-    public void 게임_시작_문구를_화면에_출력하라() throws Exception{
-        //given
-        outputView.StartBaseballGame();
-        final String EXPECT = "숫자 야구 게임을 시작합니다.\n";
-        String actual = PRINT.toString();
+        @Nested
+        class 게임_시작_문구를 {
+            private final String expect = "숫자 야구 게임을 시작합니다.\n";
 
-        //then
-        assertEquals(EXPECT, actual);
+            @Test
+            public void 출력하라() {
+                //given
+                outputView.StartBaseballGame();
+
+                //when
+                String actual = PRINT.toString();
+
+                //then
+                assertEquals(expect, actual);
+            }
+        }
+
     }
 
 }
