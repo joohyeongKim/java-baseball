@@ -11,7 +11,7 @@ public enum InputView {
 
     // 입력값을 출력하라
     public String inputBaseBallNumber() {
-        System.out.println(INPUT_NUMBER);
+        System.out.print(INPUT_NUMBER);
         String baseBallNumber = Console.readLine();
 
         InputValidator.validateBaseballNumber(baseBallNumber);

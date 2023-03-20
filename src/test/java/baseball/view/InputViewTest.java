@@ -41,7 +41,7 @@ class InputViewTest {
 
     @Nested
     class inputBaseBallNumber는_숫자_입력_문구를_출력 {
-        private String console = "숫자를 입력해주세요 : \n";
+        private String console = "숫자를 입력해주세요 : ";
 
         @Nested
         class 만약_숫자를_입력받으면 {
