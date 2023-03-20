@@ -1,7 +1,5 @@
 package baseball.controller;
 
-import static baseball.controller.BaseBallNumber.BASEBALL_NUMBER_LOWER_BOUND;
-import static baseball.controller.BaseBallNumber.BASEBALL_NUMBER_UPPER_BOUND;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import org.junit.jupiter.api.DisplayName;
@@ -14,6 +12,9 @@ import org.junit.jupiter.api.Test;
 @SuppressWarnings({"InnerClassMayBeStatic", "NonAsciiCharacters"})
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class BaseBallNumberTest {
+
+    private final int BASEBALL_NUMBER_LOWER_BOUND = 1;
+    private final int BASEBALL_NUMBER_UPPER_BOUND = 9;
 
     @Nested
     class valueOf_메서드는 {

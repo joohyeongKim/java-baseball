@@ -3,8 +3,8 @@ package baseball.controller;
 import java.util.HashMap;
 
 public class BaseBallNumber {
-    public final static int BASEBALL_NUMBER_LOWER_BOUND = 1;
-    public final static int BASEBALL_NUMBER_UPPER_BOUND = 9;
+    private final static int BASEBALL_NUMBER_LOWER_BOUND = 1;
+    private final static int BASEBALL_NUMBER_UPPER_BOUND = 9;
     private static final HashMap<Integer, BaseBallNumber> CACHE = new HashMap<>();
 
     static {
