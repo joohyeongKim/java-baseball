@@ -40,7 +40,7 @@ class BaseBallNumberTest {
             public void BaseBallNumberBoundException을_던져라() throws Exception{
                 //then
                 assertThatThrownBy(() -> BaseBallNumber.valueOf(given))
-                        .isInstanceOf(BaseBallNumberBoundException.class);
+                        .isInstanceOf(BaseBallGameException.class);
             }
         }
 
@@ -52,7 +52,7 @@ class BaseBallNumberTest {
             public void BaseBallNumberBoundException을_던져라() throws Exception{
                 //then
                 assertThatThrownBy(() -> BaseBallNumber.valueOf(given))
-                        .isInstanceOf(BaseBallNumberBoundException.class);
+                        .isInstanceOf(BaseBallGameException.class);
             }
         }
     }

@@ -26,7 +26,7 @@ public class BaseBallNumber {
     }
     private static void validate(Integer number) {
         if ( number < BASEBALL_NUMBER_LOWER_BOUND || number > BASEBALL_NUMBER_UPPER_BOUND ) {
-            throw new BaseBallNumberBoundException();
+            throw new BaseBallGameException();
         }
     }
 }
