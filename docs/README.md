@@ -24,7 +24,7 @@
 - [x] 잘못된 값을 입력할 경 IllegalArgumentException 을 발생시키고 애플리케이션이 종료되어야 한다.
 
 ### 추가
-- [x] 숫자에 대한 값을 포장(wrap)
-- [x] 3자리의 공 리스트를 관리하는 일급 컬렉션 추가
-- [x] List<BaseBall> 생성 담당하는 책임 BaseBallFactory 추가
+- [x] 숫자를 표현하는 BaseBallNumber 클래스 추가
+- [] BaseBallNumber 리스트를 관리하는 일급 컬렉션 BaseBallNumbers 클래스 추가
 - [x] 게임 진행 상태 정보를 관리하는 enum BaseballGameStatus 추가
+- [x] 입력값 겅증 책임을 가지고 있는 InputValidator 유틸 클래스 추가
